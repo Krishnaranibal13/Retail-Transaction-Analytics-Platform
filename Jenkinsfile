@@ -44,7 +44,7 @@ pipeline {
                         exit 1
                     }
 
-                    rsync -a --delete \
+                    rsync -rlptD --no-owner --no-group --delete \
                         --exclude='.env' \
                         --exclude='.git/' \
                         "$WORKSPACE/" "$DEPLOY_DIR/"
